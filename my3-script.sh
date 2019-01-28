@@ -1,4 +1,4 @@
-# ! /bin/bash
+#! /bin/bash
 echo -e "Enter the file name: \c"
 read
 if [ -f $REPLY ]
