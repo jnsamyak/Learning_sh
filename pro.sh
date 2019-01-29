@@ -10,7 +10,7 @@ echo "Your password has been created"
 echo 
 echo "Do you want to create an directory?"
 read -e reply
-if [[ $reply -eq "yes" ]] || [[ $reply -eq "YES" ]]
+if [ $reply = "yes" ] || [ $reply = "YES" ]
 then
 echo -e  " Enter Directory Name: \c" 
 read diname
@@ -29,16 +29,30 @@ then
          fi
 else
    echo "The file does not exist."  
-   echo "Do you want to create the file ?"
-        read -e ans
-        if [ "$ans" = "yes" ]
+   echo "Do you want to create the file ?" 
+   read -e ans
+   if [ "$ans" = "yes" ]
+   then
+        echo "Enter password to create the file"
+        read -se sud_pass
+        if [ $sud_pass = $password ]
         then
         echo "FileName to be created :"
         read -e name
         touch $name
         echo "File Created !!"
         fi
-fi    
+fi
+fi
+else    
+echo "No, directory has been created !"
+echo -e "Do you want to open the list of directory ? \c"
+read reply2
+if [ $reply2 = "yes" ] || [ $reply2 = "YES" ]
+then 
+dir
+echo "These are the list of the directories."
+fi
 
 fi
 
