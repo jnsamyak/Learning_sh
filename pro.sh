@@ -26,6 +26,13 @@ then
             cat >> $REPLY 
          else 
             echo "The file does not have a write permission."
+            echo -e "Do you want to add the permission? \c"
+            read response
+            if [ $response = "yes" ] || [ $response = "YES" ]
+            then
+            chmod ug=rw $REPLY
+            echo "Permission Granted."
+            fi
          fi
 else
    echo "The file does not exist."  
