@@ -31,7 +31,7 @@ then
             if [ $response = "yes" ] || [ $response = "YES" ]
             then
             chmod ug=rw $REPLY
-            echo "Permission Granted."
+                   echo "Permission Granted."
             fi
          fi
 else
@@ -62,4 +62,14 @@ echo "These are the list of the directories."
 fi
 
 fi
+echo "Do you want to download any links?"
+read q1
+if [[ $q1 -eq "yes" ]]
+then
+echo "Enter name of the url{http://___.__}"
+read -e name
 
+exec wget http://$name;
+else
+echo "Thanks for software check"
+fi
