@@ -1,6 +1,10 @@
 #! /bin/bash
 #introduction to function
 echo "This is second script from script 4"
+echo "File entered :$1"
+echo "Source file :$0"  
+#$0 reads and save the source file name at its index 0 as we enter it first
+#$1 reads and save the second file name at its index 1 as we enter it at second pos and so on
 echo "Script to count the lines"
 # Link filedescriptor 1 with standard input
 exec 1<&0
